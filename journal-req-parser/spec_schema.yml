@@ -1,0 +1,19 @@
+# spec.yml schema
+# Every key is required to be present; unknown or unparseable values are null and flagged.
+# The parser fills all keys. Any key it cannot confidently extract is set to null
+# and its name added to the flagged list for user confirmation.
+
+journal:            # string, journal name
+article_type:       # string, e.g. Research Article
+word_limits:        # map: abstract, main_text, per_section (map), references_max (int)
+abstract:           # map: max_words, structured (bool), sections (list)
+references:         # map: style, csl, max_count, format_notes
+figures:            # map: max_count, formats (list), min_dpi, color_mode, max_dimensions, min_font_pt
+tables:             # map: max_count, formats (list), format_notes
+supplementary:      # map: allowed (bool), rules
+sections:           # list of required sections in order
+statements:         # list, e.g. data_availability, code_availability, ethics, permits, competing_interests, funding
+cover_letter:       # map: required (bool), elements (list)
+forms:              # list of required forms, e.g. author_contributions, conflicts
+file_formats:       # map: manuscript, figures, tables
+flagged:            # list of requirement names the parser could not confidently extract
