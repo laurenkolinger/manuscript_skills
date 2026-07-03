@@ -5,6 +5,14 @@ manuscript version from the analysis or edit layer and carries it through every
 step a journal requires, producing a complete, conformant deliverables package.
 It is the submit analog of `manuscript-revision-roundtrip`.
 
+## Contents
+
+```text
+manuscript-submit/
+├── README.md   # this file
+└── SKILL.md    # behavior rules Claude follows
+```
+
 ## When to use it
 
 Use this skill whenever a manuscript version is ready for journal submission

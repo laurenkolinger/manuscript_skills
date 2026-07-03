@@ -4,6 +4,14 @@ The terminal step that certifies a project is current, clean, complete in its
 dependencies, and reproduces its target from raw data, before the work is shared
 or frozen at a milestone.
 
+## Contents
+
+```text
+completion-audit/
+├── README.md   # this file
+└── SKILL.md    # behavior rules Claude follows
+```
+
 ## When to use
 
 Run this skill as the closing sweep of every build, and any time a project must

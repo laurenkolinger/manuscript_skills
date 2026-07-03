@@ -46,34 +46,39 @@ blocking issue.
 
 ## The finding schema (matching the docx-extractor's comment schema)
 
-Every finding the agents write takes this form:
+Every finding the agents write uses the docx-extractor's comment record fields, so
+the consolidate stage reads a finding with the same code path that reads a returned
+coauthor comment (`comment_item` in `generate_master_revision_list.py`):
 
 ```json
 {
-  "reviewer": "figure-qc-reviewer",
-  "type": "comment | suggested_change",
-  "anchor": {
-    "file": "manuscript.qmd",
-    "section": "Figure 2 caption",
-    "offset": 1234,
-    "surrounding": "..."
-  },
-  "issue": "Figure 2 is 150 dpi; the journal requires 300 dpi minimum.",
-  "suggested_fix": "Re-export Figure 2 at 300 dpi.",
-  "class": "mechanical | judgment",
-  "dimension": "figures"
+  "id": "figures-qc-001",
+  "author": "figure-qc-reviewer",
+  "author_display": "figure-qc-reviewer",
+  "date": "2026-06-29",
+  "text": "Figure 2 is 150 dpi; the journal requires 300 dpi minimum.",
+  "anchored_text": "Figure 2",
+  "context_before": "the caption reads",
+  "context_after": "and the panel labels follow",
+  "paragraph": 42,
+  "rev_range": null,
+  "reply_to": null,
+  "class": "mechanical",
+  "dimension": "figures",
+  "suggested_fix": "Re-export Figure 2 at 300 dpi."
 }
 ```
 
-The `reviewer` field takes a dimension-appropriate name (for example
-`conformance-reviewer`, `reference-checker`, `figure-qc-reviewer`,
-`stats-reviewer`) in place of a coauthor name. The `type` field is
-`suggested_change` for a mechanical fix the agent can apply to the package,
-and `comment` for a judgment item that requires the author's decision. The `class`
-field drives triage: `mechanical` items go to the AUTO-FIX LOG; `judgment`
-items go to the MASTER_REVISION_LIST. All other fields match the extractor
-schema exactly, so the reconcile and consolidate stages read them identically
-to a returned coauthor DOCX.
+The first eleven fields are exactly the extractor's comment record (`id`, `author`,
+`author_display`, `date`, `text`, `anchored_text`, `context_before`,
+`context_after`, `paragraph`, `rev_range`, `reply_to`), so the reconcile and
+consolidate stages read a finding identically to a returned coauthor comment.
+`author` and `author_display` carry a dimension-appropriate reviewer name (for
+example `conformance-reviewer`, `reference-checker`, `figure-qc-reviewer`,
+`stats-reviewer`) in place of a coauthor. The three extra fields drive submit-layer
+triage and the edit-layer generator ignores them: `class` (`mechanical` goes to the
+AUTO-FIX LOG, `judgment` goes to the MASTER_REVISION_LIST), `dimension`, and
+`suggested_fix` (the package edit a mechanical item applies).
 
 All findings land in `extracted/` as one JSON lines file per dimension:
 `extracted/manuscript-qc.jsonl`, `extracted/figures-qc.jsonl`,

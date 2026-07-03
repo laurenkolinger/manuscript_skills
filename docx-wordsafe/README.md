@@ -1,5 +1,14 @@
 # docx-wordsafe
 
+## Contents
+
+```text
+docx-wordsafe/
+├── README.md            # this file
+├── SKILL.md             # behavior rules Claude follows
+└── repair_docx_tc.py    # post-processing script that fixes the two OOXML defects
+```
+
 This skill makes a Quarto-rendered docx valid in Microsoft Word and full width.
 Quarto leaves two OOXML defects in its docx output, and this skill runs one
 post-processing pass that fixes both.

@@ -4,6 +4,15 @@ Produces a colored redline DOCX from an EDIT qmd, so a reviewer can compare a
 proposed change side by side with the coauthor's returned Word file during the
 interactive review loop.
 
+## Contents
+
+```text
+redline-render/
+├── README.md                    # this file
+├── SKILL.md                     # behavior rules Claude follows
+└── make_redline_reference.R     # builds the colored reference docx (Addition/Deletion/Edit)
+```
+
 ## When to use
 
 Run this skill in Stage 3 of the edit-layer round-trip, each time an agreed

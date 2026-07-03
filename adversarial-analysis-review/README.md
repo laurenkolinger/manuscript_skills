@@ -5,6 +5,15 @@ independent reviewers, then forces one audit report to win, so the findings you
 trust are the ones that survive scrutiny rather than the ones a single pass
 asserted.
 
+## Contents
+
+```text
+adversarial-analysis-review/
+├── README.md      # this file
+├── SKILL.md       # behavior rules Claude follows
+└── templates.md   # output templates for the review cascade
+```
+
 ## When to use
 
 Reach for this skill when an analysis is about to be relied on and a wrong

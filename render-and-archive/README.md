@@ -4,6 +4,15 @@
 single-type folders, so the repo stays legible and old renders never pile up next
 to new ones.
 
+## Contents
+
+```text
+render-and-archive/
+├── README.md               # this file
+├── SKILL.md                # behavior rules Claude follows
+└── CONTENTS_STANDARD.md   # the standard Contents format for directory READMEs
+```
+
 ## When to use
 
 Use it whenever a qmd is rendered in the project, or when setting up rendering

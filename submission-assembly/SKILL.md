@@ -120,7 +120,7 @@ writing a word:
 2. `spec.yml`, for the journal's specific cover-letter requirements (required
    sections, word limit, suggested reviewers, conflict-of-interest declaration,
    any required statements).
-3. The cover-letter template at `templates/cover_letter_template.md` in the
+3. The cover-letter template at `templates/cover_letter.template.md` in the
    submit template.
 
 Draft the letter, then pass every sentence through the full writing-skill set:
@@ -199,8 +199,8 @@ Save as `accessory_info/accessory_info_v{N.M}.docx`.
 ## Step 4: carry only applicable placeholder documents
 
 `spec.yml` lists the forms and statements the target journal requires. Check
-each required form against the list of placeholder templates in
-`templates/forms/`. Carry only those the journal requires; do not include a
+each required form against the `placeholder_*.template.md` files in
+`templates/`. Carry only those the journal requires; do not include a
 form the journal does not ask for.
 
 For each applicable form:

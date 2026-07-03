@@ -4,6 +4,14 @@ Build the full deliverables package, draft the cover letter and the coauthor
 accessory-info document, carry only applicable placeholder documents, and write
 the submission MANIFEST.
 
+## Contents
+
+```text
+submission-assembly/
+├── README.md   # this file
+└── SKILL.md    # behavior rules Claude follows
+```
+
 ## What it does
 
 This skill assembles every file a journal submission requires into one

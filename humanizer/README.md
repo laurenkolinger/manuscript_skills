@@ -2,6 +2,16 @@
 
 A skill for Claude Code and OpenCode that removes signs of AI-generated writing from text, making it sound more natural and human.
 
+## Contents
+
+```text
+humanizer/
+├── README.md    # this file
+├── SKILL.md     # behavior rules Claude follows
+├── AGENTS.md    # agent configuration
+└── LICENSE
+```
+
 ## Installation
 
 ### Claude Code

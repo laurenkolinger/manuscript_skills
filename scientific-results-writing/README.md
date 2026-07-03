@@ -4,6 +4,14 @@
 a manuscript Results section: direct, measured, and data-centered, with metaphor
 and theater removed.
 
+## Contents
+
+```text
+scientific-results-writing/
+├── README.md   # this file
+└── SKILL.md    # behavior rules Claude follows
+```
+
 ## When to use
 
 Use this skill whenever you write or revise a results narrative, figure caption,

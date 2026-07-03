@@ -4,6 +4,18 @@ Translates a dropped-in journal requirements folder into a machine-checkable
 `spec.yml` and a human-readable `checklist.md`. It is journal-agnostic: the same
 procedure works for any target journal.
 
+## Contents
+
+```text
+journal-req-parser/
+├── README.md                # this file
+├── SKILL.md                 # behavior rules Claude follows
+├── gather_requirements.sh   # fetches and organizes guideline files into requirements/<journal>/
+├── spec_schema.yml          # JSON Schema for spec.yml validation
+├── validate_spec.py         # validates a generated spec.yml against the schema
+└── test_validate_spec.py    # tests for validate_spec.py
+```
+
 ## What it does
 
 The skill reads one or more guideline files in any format (PDF, HTML, DOCX,

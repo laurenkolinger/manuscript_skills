@@ -165,7 +165,15 @@ clean resume pointer.
 1. Seed the `versions/v{N.M}/` entry folder from the template.
 2. Pull the latest clean manuscript version from base or edit into `incoming/`
    (the DOCX, the source qmd, and the render), by the manifest paths. The submit
-   layer references base data; it never copies base data.
+   layer references base data; it never copies base data. Alternatively, open
+   against a provisional working copy: file the temporary manuscript in `incoming/`,
+   set `source_status: provisional`, and write `incoming/SOURCE_STATUS.md`. A
+   provisional entry may run the source-independent sidecar deliverables and a
+   preliminary review but never reaches PACKAGED or SUBMITTED. When the
+   authoritative latest arrives (Lauren copies it in or instructs a fetch from base
+   or edit), run the swap-and-refresh: archive the provisional to `incoming/old/`,
+   set `source_status: authoritative`, and refresh only the source-dependent work.
+   See the provisional-source rule in CLAUDE.md.
 3. Dispatch `journal-req-parser` on the chosen `requirements/<journal>/` folder.
    It produces `spec.yml` (machine-checkable) and `checklist.md`
    (human-readable) and flags anything it cannot confidently parse for Lauren's
@@ -288,8 +296,12 @@ LOOP (repeat until the list is empty):
   5. DIALOG with Lauren. Approve, modify, follow-up, disagree, or defer. Follow
      follow-up threads wherever they lead. There is no rush.
 
-  6. IMPLEMENT the agreed change. Apply package or presentation changes in
-     drafts/. Flag and collect source changes for the batch back to base.
+  6. IMPLEMENT the agreed change. Render it as a colored redline DOCX in drafts/
+     with redline-render (the shared redline reference template) and show Lauren
+     for side-by-side review, exactly as in the edit-layer roundtrip. Apply package
+     or presentation changes in drafts/ and the deliverables package. Flag and
+     collect source changes for the batch back to base; the redline is the agreed
+     specification of each source edit.
 
   7. DELETE the resolved item (or mark [DEFERRED] with owner and notes). Update
      STATE.md (current item index) and the entry README log.

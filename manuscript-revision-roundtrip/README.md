@@ -4,6 +4,18 @@ The heart of the edit layer. This skill round-trips coauthor edits and comments
 from a Word DOCX back into a reproducible plain-text manuscript, across many
 sessions that can span days to months.
 
+## Contents
+
+```text
+manuscript-revision-roundtrip/
+├── README.md                             # this file
+├── SKILL.md                              # behavior rules Claude follows
+├── CAPTURE.md                            # capture-avenue reference (Avenues A-D)
+├── generate_master_revision_list.py      # consolidates captured items into MASTER_REVISION_LIST
+├── run_capture.sh                        # runs all four capture avenues
+└── test_version_arg.py                   # tests version argument handling
+```
+
 It is an orchestrator, not a one-shot script. A single version (one coauthor
 round) parks and resumes many times, so every boundary is an explicit stopping
 point with a recorded handoff. The transform is human-driven and symbolic: edits

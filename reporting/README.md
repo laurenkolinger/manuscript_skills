@@ -4,6 +4,15 @@
 cannot poke holes in, with every number traceable, every figure interpreted, and
 the strongest finding leading.
 
+## Contents
+
+```text
+reporting/
+├── README.md      # this file
+├── SKILL.md       # behavior rules Claude follows
+└── templates.md   # output templates for reports
+```
+
 ## When to use
 
 Use it whenever an analysis result is written up: a report, a qmd results

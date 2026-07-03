@@ -199,8 +199,38 @@ Items are deleted as resolved. The list never accumulates done items.
 
 ## Stage 3: interactive apply in the EDIT qmd (redline), one item at a time
 
-This stage mirrors the user's existing MASTER_REVISION_LIST loop. It is a dialog
-with Lauren, not a batch run.
+This stage mirrors the user's existing MASTER_REVISION_LIST loop. It opens with a
+triage so a long list does not become a mountain of micro-edits, then works the
+substantive items as a dialog with Lauren.
+
+### Step 0: triage and pick a mode (run once, before the loop)
+
+Pitch this up front. Classify every item into two tiers, then let Lauren choose how
+to run the round.
+
+- **Obvious (batch-acceptable):** author names, initials, and affiliations;
+  coauthor typo and spelling fixes and meaning-preserving wording tweaks;
+  formatting, spacing, and citation auto-numbering artifacts; and non-numeric
+  placeholder fills.
+- **Substantive (one at a time):** everything else, and always anything that
+  touches a number or value, a reorder, framing, a content addition, a citation
+  addition, or a numeric placeholder, no matter how small it looks.
+
+Present the split (the counts and the full obvious list, so Lauren can pull any
+item out of the batch), then ask which mode to run and recommend none:
+
+- **Accept all, review the redline:** apply the whole change set as redline, render,
+  and Lauren reviews the redline copy and flags anything to revisit.
+- **Accept the obvious batch, then dialog the substantive:** apply the obvious tier
+  as redline, render, then work the substantive items through the loop below.
+- **Strict one at a time:** work every item through the loop below.
+
+Apply the chosen batch as redline in one pass. Even in a batch the rules hold: run
+house style and correct coauthor spelling on adopted prose, keep every inline-R
+number live, and never hardcode a value. A batch item that turns out to touch a
+number or need analysis moves to the substantive tier. Render the redline DOCX,
+Lauren reviews it side by side with the coauthor DOCX, and anything she flags
+becomes a substantive item. Then run the loop for whatever remains.
 
 ```
 LOOP (repeat until the list is empty):
@@ -247,8 +277,9 @@ LOOP (repeat until the list is empty):
   9. GO TO 1.
 ```
 
-Critical rules carried from the existing loop: one item at a time, never batch;
-context is everything, re-read every single time; investigate before presenting;
+Critical rules carried from the existing loop: substantive items one at a time,
+with the obvious tier batched only on Lauren's up-front approval from the triage
+step; context is everything, re-read every single time; investigate before presenting;
 draft text is a proposal; follow-up questions are expected; delete an item only
 after Lauren explicitly approves.
 

@@ -5,6 +5,17 @@ as markdown, plain text, and JSON. This skill is part of the omnibus set of
 skills for reproducible scientific manuscripts. It serves the edit layer, where a
 coauthor's commented or edited file round-trips back into the plain-text source.
 
+## Contents
+
+```text
+docx-comments/
+├── README.md              # this file
+├── SKILL.md               # behavior rules Claude follows
+├── EXTRACTOR_README.md    # usage guide for the extraction scripts
+├── extract_docx.py        # extracts comments and tracked changes (full --all mode)
+└── extract_comments.py    # extracts comments only
+```
+
 ## What it does
 
 `extract_docx.py` parses the `.docx` XML directly and reads what Word recorded:

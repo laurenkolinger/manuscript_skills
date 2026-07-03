@@ -4,6 +4,14 @@ Rebuild every reported statistic, figure, and table from raw data and minimal
 code, in document order, to exact precision, and flag anything not
 reproducible.
 
+## Contents
+
+```text
+analysis-reproduction/
+├── README.md   # this file
+└── SKILL.md    # behavior rules Claude follows
+```
+
 ## What it does
 
 This skill dispatches one agent per analysis section in parallel. Each agent

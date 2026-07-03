@@ -4,6 +4,16 @@ The equivalence gate that proves a reorganized pipeline reproduces an original
 rendered document with no drift, reducing the two renders to a zero normalized
 diff over body prose, every number, and every table cell.
 
+## Contents
+
+```text
+docx-equivalence/
+├── README.md                    # this file
+├── SKILL.md                     # behavior rules Claude follows
+├── compare_docx.sh              # terminal equivalence gate (body prose, numbers, tables)
+└── compare_intermediate.sh      # continuous intermediate check during reconstruction
+```
+
 ## When to use
 
 Run this skill during a retrofit, and any time you must demonstrate that a

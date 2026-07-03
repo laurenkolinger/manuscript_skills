@@ -3,6 +3,25 @@
 **Purpose.** Packaged, installable copies of the individual skills, one `.zip`
 per skill, for distribution and the public-facing omnibus release.
 
+## Contents
+
+```text
+bundles/
+├── README.md                         # this file
+├── adversarial-analysis-review.zip
+├── analytical-writing.zip
+├── completion-audit.zip
+├── de-densify-scientific-prose.zip
+├── docx-equivalence.zip
+├── house-style.zip
+├── humanizer.zip
+├── project-kickoff.zip
+├── render-and-archive.zip
+├── reporting.zip
+├── scientific-results-writing.zip
+└── scientific-sentence-framing.zip
+```
+
 ## What a bundle is
 
 Each `<skill>.zip` holds a self-contained copy of one skill folder: its

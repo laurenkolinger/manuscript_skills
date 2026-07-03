@@ -5,6 +5,14 @@ derived-number explanations, technical comparisons, and evidence-based arguments
 where the reader can see what you found, how you found it, how far it generalizes,
 and where it could be wrong.
 
+## Contents
+
+```text
+analytical-writing/
+├── README.md   # this file
+└── SKILL.md    # behavior rules Claude follows
+```
+
 ## When to use
 
 Apply this skill whenever the task is to explain results, justify a number,

@@ -4,6 +4,14 @@
 six-phase orchestration that lands an existing, messy analysis into the template
 scheme under a hard equivalence gate.
 
+## Contents
+
+```text
+project-kickoff/
+├── README.md   # this file
+└── SKILL.md    # behavior rules Claude follows
+```
+
 ## When to use
 
 Run it once, at the very start, on a fresh clone of

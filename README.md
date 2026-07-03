@@ -17,6 +17,36 @@ stand alone. Reproducibility is sacred across the family: every number is an inl
 R expression pulling from the latest RData via the knitr contract, and every
 citation comes from `.bib` plus the journal CSL. Nothing is hardcoded.
 
+## Contents
+
+```text
+skills/
+├── README.md                         # this file: skill index and reference policy
+├── bundles/                          # zipped skill bundles for distribution
+├── house-style/                      # SKILL.md + README.md
+├── analytical-writing/               # SKILL.md + README.md
+├── scientific-results-writing/       # SKILL.md + README.md
+├── de-densify-scientific-prose/      # SKILL.md + README.md
+├── scientific-sentence-framing/      # SKILL.md + README.md
+├── humanizer/                        # SKILL.md + README.md + AGENTS.md + LICENSE
+├── reporting/                        # SKILL.md + README.md + templates.md
+├── render-and-archive/               # SKILL.md + README.md + CONTENTS_STANDARD.md
+├── docx-equivalence/                 # SKILL.md + README.md + compare_docx.sh + compare_intermediate.sh
+├── adversarial-analysis-review/      # SKILL.md + README.md + templates.md
+├── project-kickoff/                  # SKILL.md + README.md
+├── completion-audit/                 # SKILL.md + README.md
+├── docx-comments/                    # SKILL.md + README.md + extract_docx.py + extract_comments.py + EXTRACTOR_README.md
+├── manuscript-revision-roundtrip/    # SKILL.md + README.md + CAPTURE.md + generate_master_revision_list.py + run_capture.sh + test_version_arg.py
+├── redline-render/                   # SKILL.md + README.md + make_redline_reference.R
+├── session-handoff/                  # SKILL.md + README.md
+├── docx-wordsafe/                    # SKILL.md + README.md + repair_docx_tc.py
+├── journal-req-parser/               # SKILL.md + README.md + gather_requirements.sh + spec_schema.yml + validate_spec.py + test_validate_spec.py
+├── analysis-reproduction/            # SKILL.md + README.md
+├── submission-qc-review/             # SKILL.md + README.md + TOOLS.md + check_tools.sh + test_check_tools.sh
+├── submission-assembly/              # SKILL.md + README.md
+└── manuscript-submit/                # SKILL.md + README.md
+```
+
 ## The skills
 
 | Skill | What it does |
@@ -36,6 +66,7 @@ citation comes from `.bib` plus the journal CSL. Nothing is hardcoded.
 | `docx-comments` | NEW. Wraps `extract_docx.py` to read comments and tracked changes (insertions, deletions, moves, paragraph merges and splits) straight from the DOCX XML and emit them as markdown, text, and JSON. Avenue A of the edit layer's capture, with exact offsets, per-author counts, headline totals, comment threads, and comment-to-edit linkage. |
 | `manuscript-revision-roundtrip` | NEW. The edit-layer orchestration: five stages from exhaustive multi-avenue capture, to one MASTER_REVISION_LIST, to an interactive one-item-at-a-time apply in the EDIT qmd, to a clean reflect into the BASE qmd with re-render and resend, to a central ledger. Encodes a resumable version state machine with explicit stopping points, handoffs, and session startup and closeout protocols, and runs the full writing skill set during interactive review. |
 | `redline-render` | NEW. Produces the colored Addition, Deletion, and Edit redline DOCX from an EDIT qmd, so Lauren compares the redline side by side with the coauthor DOCX. Inline-R numbers stay live inside the redline markup, never hardcoded. |
+| `session-handoff` | NEW (edit and submit layers). The handoff discipline at every stopping point: a machine-clean STATE.md resume pointer, a narrative HANDOFF_{date}.md when a state boundary is crossed, and a directive NEXT_AGENT_START_HERE.md with a complete file map and a copy-paste prompt when the next worker is a fresh context window or a different agent. The layer orchestrators build the resume discipline into their state machines; this skill is the shared standard for the artifacts those stops produce. |
 | `manuscript-submit` | NEW (submit layer). The orchestrator for the submit layer. Takes the latest clean manuscript version from the analysis or edit layer and carries it through every step a journal requires, producing a complete, conformant deliverables package. |
 | `journal-req-parser` | NEW (submit layer). Translates a dropped-in journal requirements folder into a machine-checkable `spec.yml` and a human-readable `checklist.md`. Parses only what the guidelines state, flags uncertain requirements, and refuses to fabricate. |
 | `analysis-reproduction` | NEW (submit layer). Rebuilds every reported statistic, figure, and table from raw data and minimal code, in document order, to exact precision, and flags anything not reproducible. |

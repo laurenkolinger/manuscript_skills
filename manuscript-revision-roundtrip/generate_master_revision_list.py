@@ -694,7 +694,7 @@ def render_document(capture, by_phase, args):
 # Static text blocks (the loop and completion criteria)
 # --------------------------------------------------------------------------- #
 INSTRUCTIONS_TEMPLATE = """\
-## INSTRUCTIONS FOR CLAUDE (READ THIS EVERY TIME -- ESPECIALLY WHEN CONTEXT IS LOW)
+## INSTRUCTIONS FOR CLAUDE (READ THIS EVERY TIME, ESPECIALLY WHEN CONTEXT IS LOW)
 
 ### What This Document Is
 
@@ -716,16 +716,51 @@ the edit as a change decision, trace it to the upstream computation in the base
 layer, and fix or confirm it there so the inline R expression renders the
 corrected value.
 
-### The Process -- Follow This Exactly
+### Start Here: Triage and Pick a Mode (run once, before the loop)
+
+A long list becomes a mountain of micro-edits if every item goes through the full
+dialog. Before working items one at a time, classify the whole list and let Lauren
+choose how to run the round. Pitch this up front.
+
+1. Classify every item into two tiers:
+   - **Obvious (batch-acceptable):** author names, initials, and affiliations;
+     coauthor typo and spelling fixes and meaning-preserving wording tweaks;
+     formatting, spacing, and citation auto-numbering artifacts; and non-numeric
+     placeholder fills.
+   - **Substantive (one at a time):** everything else, and ALWAYS anything that
+     touches a number or value, a reorder, framing, a content addition, a citation
+     addition, or a numeric placeholder, no matter how small it looks.
+
+2. Present the split to Lauren: the counts, and the full obvious list so she can
+   pull any item out of the batch. Then ASK which mode to run, and recommend none:
+   - **Accept all, review the redline:** apply the whole change set as redline,
+     render, and Lauren reviews the redline copy and flags anything to revisit.
+   - **Accept the obvious batch, then dialog the substantive:** apply the obvious
+     tier as redline, render, then work the substantive items one at a time.
+   - **Strict one at a time:** work every item through the loop below.
+
+3. Apply the chosen batch as redline in one pass. Even in a batch the rules hold:
+   run house style and correct coauthor spelling on any adopted prose, keep every
+   inline-R number live, and never hardcode a value. If a batch item turns out to
+   touch a number or need analysis, move it to the substantive tier instead of
+   applying it.
+
+4. Render the redline DOCX and have Lauren review the batched changes side by side
+   with the coauthor DOCX. Anything she flags becomes a substantive dialog item.
+
+5. Delete the resolved batched items from this file, update the resume pointer,
+   then enter the loop below for whatever remains.
+
+### The Process: Follow This Exactly
 
 ```
 LOOP (repeat until this list is empty):
 
   1. READ this file (MASTER_REVISION_LIST.md) to find the FIRST open item.
 
-  2. GATHER CONTEXT -- this is the most important step. Before you say ANYTHING
+  2. GATHER CONTEXT. This is the most important step. Before you say ANYTHING
      to Lauren:
-     a. Re-read the relevant section of {edit_qmd}. Not just the anchored span --
+     a. Re-read the relevant section of {edit_qmd}. Not just the anchored span;
         read the SURROUNDING PARAGRAPHS to understand flow, tone, and what comes
         before and after. The text may have shifted from an earlier item's edit.
      b. Follow the item's Before-asking hints. Read those files, search, explore.
@@ -772,9 +807,11 @@ LOOP (repeat until this list is empty):
   10. GO TO STEP 1 (read the file again, find the next item).
 ```
 
-### Critical Rules -- READ THESE
+### Critical Rules: READ THESE
 
-1. **ONE item at a time.** Never jump ahead. Never batch.
+1. **Substantive items, one at a time.** Work each substantive item through the
+   full dialog, never jumping ahead. The only batching allowed is the obvious tier
+   Lauren approved up front in the triage step. Never batch a substantive item.
 2. **CONTEXT IS EVERYTHING.** Before every single item, re-read the relevant qmd
    section. Every. Single. Time. Even if you think you remember it. The qmd may
    have changed from a previous item's edit. Re-read.

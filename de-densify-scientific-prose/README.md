@@ -4,6 +4,14 @@ Unpack dense quantitative prose so a reader identifies the metric, the
 denominator, the unit, the sample set, the comparison, and the interpretation on
 first read, without rereading and without losing a single number.
 
+## Contents
+
+```text
+de-densify-scientific-prose/
+├── README.md   # this file
+└── SKILL.md    # behavior rules Claude follows
+```
+
 ## When to use
 
 Apply this skill when results text, figure captions, table notes, model

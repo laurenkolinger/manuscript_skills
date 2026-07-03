@@ -2,6 +2,14 @@
 
 **Purpose.** Fix the writing mechanics of every piece of prose so it reads as if an accountable person did real work and stated it plainly.
 
+## Contents
+
+```text
+house-style/
+├── README.md   # this file
+└── SKILL.md    # behavior rules Claude follows
+```
+
 ## When to use
 
 Apply it to all written deliverables, even short ones, and even when another

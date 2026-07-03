@@ -3,6 +3,17 @@
 Review a submission package against a journal spec, auto-fix mechanical issues,
 and capture judgment items as coauthor-style reviews.
 
+## Contents
+
+```text
+submission-qc-review/
+├── README.md           # this file
+├── SKILL.md            # behavior rules Claude follows
+├── TOOLS.md            # tool requirements and versions
+├── check_tools.sh      # verifies required tools are installed and at the right version
+└── test_check_tools.sh # tests for check_tools.sh
+```
+
 ## What it does
 
 This skill dispatches at least two independent adversarial agents per dimension

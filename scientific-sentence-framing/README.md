@@ -4,6 +4,14 @@
 easy to enter, easy to follow, and easy to connect to the next, with a concrete
 subject first and the number next to what it measures.
 
+## Contents
+
+```text
+scientific-sentence-framing/
+├── README.md   # this file
+└── SKILL.md    # behavior rules Claude follows
+```
+
 ## When to use
 
 Use this skill when scientific text holds the right information but the sentence
